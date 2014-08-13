@@ -1,0 +1,93 @@
+.sidebar {
+    padding: 20px 0;
+}
+@media (max-width: 979px) {
+    .main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.sidebar .table {
+    margin-bottom: 0;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.word-break {
+    word-break: break-all;
+}
+
+.spinner-bar {
+    position: relative;
+    height: 50px;
+    background: #FAFAFA;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.glyphicon-spinner {
+    width: 16px;
+    height: 16px;
+    margin: 0 2px;
+}
+
+.app-bar {
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.app-bar .ui-scrollfix {
+    position: fixed;
+    z-index: 1000;
+}
+
+.app-bar .navbar {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+@media (max-width: 979px) {
+    .app-bar .navbar {
+        border-left: none;
+        border-right: none;
+    }
+}
+
+.app-bar .navbar > .container-fluid .navbar-brand {
+    margin-left: -15px;
+}
+
+.app-bar .navbar-nav {
+    float: left;
+    margin: 0;
+}
+.app-bar .navbar-nav > li {
+    float: left;
+}
+.app-bar .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.app-bar .navbar-nav.navbar-right:last-child {
+    margin-right: -15px;
+}
+.app-bar .navbar-left {
+    float: left !important;
+}
+.app-bar .navbar-right {
+    float: right !important;
+}
+
+.app-bar .navbar-brand, .app-bar-up-button {
+    color: #000;
+}

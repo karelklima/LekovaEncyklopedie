@@ -1,0 +1,25 @@
+{
+    "title": "Court",
+    "dependencies": ["core"],
+    "prefixes": {
+        "lex:": "http://purl.org/lex#",
+        "lexcz:": "http://purl.org/lex/cz#",
+        "legislation:": "http://linked.opendata.cz/resource/legislation/cz/"
+    },
+    "apis": {
+        "decisions": {"limit": "10", "offset": "0"},
+        "decisions-filters": {},
+        "decision-detail": {"resource": ""},
+        "decision-text": {"resource": ""},
+    	"decision-related-decisions": {"resource": "", "limit": "10", "offset": "0"},
+    	"act-related-decisions": {"resource": ""}
+    },
+    "universal-search": [
+        {
+            "datasets": ["http://linked.opendata.cz/resource/dataset/legislation/nsoud.cz", "http://linked.opendata.cz/resource/dataset/legislation/nsoud.cz/updates"],
+            "type" : "lex:Decision",
+            "property" : "dcterms:title",
+            "label" : "Soudní rozhodnutí"
+        }
+    ]
+}

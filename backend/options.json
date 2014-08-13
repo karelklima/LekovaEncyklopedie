@@ -1,0 +1,53 @@
+{
+    "title" : "Justinian",
+    "favicon" : "modules/justinian/assets/img/justinian.ico",
+    "home" : {"module" : "justinian", "application" : "home"},
+    "page-not-found" : {"module" : "core", "application" : "page-not-found"},
+    "modules" : ["core", "search", "lex", "court", "coi", "justinian"],
+    "asset-extensions" : ["html", "js", "css", "png"],
+    "sparql" : {
+        "datastore-url" : "http://linked.opendata.cz/sparql",
+        "query-param-name" : "query",
+        "default-params": {
+            "format" : "application/ld+json",
+            "timeout" : "0",
+            "debug" : "on"
+        },
+        "jsonld" : {
+            "format": "application/ld+json",
+            "empty-result": {
+                "@graph" : []
+            },
+            "error-result": {
+                "@graph" : [],
+                "@error": []
+            },
+            "default-context": {},
+            "compact-options": {"graph" : true, "compactArrays" : false},
+            "dates" : {
+                "convert" : true,
+                "suffix" : "Iso",
+                "input-types" : [
+                    "http://www.w3.org/2001/XMLSchema#date"
+                ],
+                "input-formats" : [
+                    "YYYY-MM-DDZ",
+                    "YYYY-MM-DDTHH:mm:ssZ"
+                ],
+                "output-format" : "YYYY-MM-DD"
+            },
+            "default-model": { "@id" : ["string", ""]},
+            "default-prefixed-properties": ["@id"],
+            "send-warnings": true
+        }
+    },
+    "solr" : {
+    	"datastore-url" : "http://localhost:8983/solr/collection1/select",
+    	"default-params": {
+            "wt" : "json",
+            "indent" : "true"
+        }
+    },
+    "port" : 8000,
+    "development" : true
+}

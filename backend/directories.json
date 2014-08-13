@@ -1,0 +1,6 @@
+{
+    "base" : "/..",
+    "backend" : "/",
+    "frontend" : "/../frontend",
+    "modules" : "/../modules"
+}

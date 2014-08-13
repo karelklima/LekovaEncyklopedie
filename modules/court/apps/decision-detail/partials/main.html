@@ -1,0 +1,32 @@
+<div ng-controller="CourtDecisionDetailController" main-app anchor-scroll offset-top="150">
+    <div app-bar adjust-on="decisionDetail">
+        <div class="clearfix">
+            <div class="navbar-brand">
+                <a click module="court" application="decision-detail" resource="{{resource}}">
+                    Judikát č. {{decisionDetail["title"]}}
+                </a>
+            </div>
+            <div class="navbar-right">
+                <a app-bar-up-button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <a href="{{ decisionDetail.creator }}">{{ decisionDetail.creatorTitle }}</a>
+                <p class="pull-right text-muted">{{decisionDetail.decisionKind}} ({{decisionDetail.decisionCategory}})</p>
+            </div>
+            <div class="col-sm-4">
+                <p class="pull-right text-muted">{{decisionDetail.issuedIso | formatDate}}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div ng-hide="isTextLoading() || isTextEmpty()">
+
+            <div class="court-decision-text" compile="decisionText"></div>
+
+        </div>
+        <div ng-show="isTextLoading()">Načítám data...</div>
+        <div ng-show="isTextEmpty()">Text není dostupný.</div>
+    </div>
+</div>

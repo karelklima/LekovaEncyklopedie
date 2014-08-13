@@ -1,0 +1,31 @@
+{
+    "title" : "Lex",
+    "dependencies": ["core"],
+    "prefixes": {
+        "dcterms:" : "http://purl.org/dc/terms/",
+        "lex:" : "http://purl.org/lex#",
+        "lexcz:" : "http://purl.org/lex/cz#",
+        "legislation:": "http://linked.opendata.cz/resource/legislation/cz/"
+    },
+    "apis": {
+        "act-detail": {"resource": ""},
+    	"act-versions": {"resource": "", "limit" : "100", "offset" : "0"},
+    	"act-text" : {"resource": ""},
+    	"act-search" : {"query":"", "limit": "100", "offset": "0"},
+    	"decision-related-acts": {"resource":"", "limit": "10", "offset": "0"}
+    },
+    "universal-search": [
+        {
+            "datasets": ["http://linked.opendata.cz/resource/dataset/legislation/psp.cz"],
+            "type" : "lex:Act",
+            "property" : "dcterms:identifier",
+            "label" : "Zákon"
+        },
+        {
+            "datasets": ["http://linked.opendata.cz/resource/dataset/legislation/psp.cz"],
+            "type" : "lex:Act",
+            "property" : "dcterms:title",
+            "label" : "Zákon"
+        }
+    ]
+}

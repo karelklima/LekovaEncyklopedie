@@ -1,0 +1,61 @@
+PREFIX lex: <http://purl.org/lex#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX frbr: <http://purl.org/vocab/frbr/core#>
+PREFIX sao: <http://salt.semanticauthoring.org/ontologies/sao#>
+PREFIX sdo: <http://salt.semanticauthoring.org/ontologies/sdo#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX results: <http://>
+
+CONSTRUCT {
+ ?dec dcterms:title ?title .
+ ?dec dcterms:issued ?date .
+ ?dec dcterms:subject ?subject .
+ ?dec dcterms:creatorTitle ?creatorTitle .
+ ?dec dcterms:title ?title .
+ ?dec dcterms:identifier ?identifier .
+ ?dec lex:fileKind ?fileKind .
+ ?dec lex:fileNumber ?fileNb .
+ ?dec lex:senateNumber ?senateNb .
+ ?dec skos:catLabel ?decisionCategory .
+ ?dec skos:kindLabel ?decisionKind .
+ ?dec dcterms:hasText ?hasText.
+}
+
+FROM <http://linked.opendata.cz/resource/dataset/legislation/nsoud.cz>
+FROM <http://linked.opendata.cz/resource/dataset/legislation/nsoud.cz/updates>
+FROM NAMED <http://linked.opendata.cz/resource/dataset/court/cz>
+
+WHERE {
+SELECT ?dec ?title ?fileKind ?fileNb ?senateNb ?creatorTitle ?identifier (bound(?text) as ?hasText) ?decisionCategory ?decisionKind ?date ?subject
+WHERE {
+{
+  SELECT DISTINCT ?dec ?title ?fileKind ?fileNb ?senateNb ?creatorTitle
+  WHERE {
+    ?dec a lex:Decision.
+    ?dec dcterms:title ?title .
+    ?dec lex:belongsToFile ?file.
+    ?file lex:fileKind ?fileKind.
+	?file lex:fileNumber ?fileNb. 	
+	?file lex:senateNumber ?senateNb.
+	?dec dcterms:creator ?creator.
+    GRAPH <http://linked.opendata.cz/resource/dataset/court/cz> {?creator dcterms:title ?creatorTitle}
+    {{"param" : "values"}}
+  }
+  OFFSET {{"param": "offset", "default": "0"}}
+  LIMIT {{"param": "limit", "default": "10"}}
+}
+  
+  OPTIONAL { ?dec ^frbr:realizationOf/<http://linked.opendata.cz/ontology/odcs/xmlValue> ?text. }
+  OPTIONAL { ?dec dcterms:identifier ?identifier . }
+  OPTIONAL {
+    ?dec lex:decisionCategory/skos:prefLabel ?decisionCategory .
+  }
+  OPTIONAL {
+    ?dec lex:decisionKind/skos:prefLabel ?decisionKind .
+  }
+
+  OPTIONAL { ?dec dcterms:issued ?date }
+  OPTIONAL { ?dec dcterms:subject ?subject }
+}
+}
+

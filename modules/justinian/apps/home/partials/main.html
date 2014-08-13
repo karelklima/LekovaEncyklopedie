@@ -1,0 +1,35 @@
+<div ng-controller="JustinianHomeController" main-app>
+    <div app-bar>
+        <div class="navbar-brand">
+            Home: test app-navbaru
+        </div>
+        <div class="navbar-right">
+                <a app-bar-up-button></a>
+        </div>
+    </div>
+<h1>Home</h1>
+<h2>Příklady zákonů</h2>
+<ul>
+    <li><a click module="lex" application="act-detail" resource="legislation:act/1993/1-1993">Ústava ČR</a></li>
+    <li><a click module="lex" application="act-detail" resource="legislation:act/2012/89-2012">Občanský zákoník</a></li>
+    <li><a click module="lex" application="act-detail" resource="legislation:act/2009/280-2009">Daňový řád</a></li>
+    <li><a click module="lex" application="act-detail" resource="legislation:act/2008/253-2008">Zákon + ČOI</a></li>
+</ul>
+
+
+        <h2>Test  click</h2>
+        <script type="text/javascript">
+            function ClickTestController($scope)
+            {
+                $scope.myCoolParams = { cool:true };
+            }
+        </script>
+        <div ng-controller="ClickTestController">
+        <a click params='{"x":"x"}' a="b">params: x=x, a=b</a><br>
+        <a click params='{z:"z"}' a="x">params: z=z, a=x</a><br>
+        <a click params="myCoolParams">myCoolParams z controlleru</a><br>
+        <a click module="justinian" application="home" b="b">module: justinian, application: home, b: b</a><br>
+        <a click resource="legislation:act/1993/1-1993" type="lex:Act" v="v">resource: legis..., type: lex:Act, v=v</a>
+        </div>
+
+</div>

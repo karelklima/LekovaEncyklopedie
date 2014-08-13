@@ -1,0 +1,43 @@
+{
+  "name": "PIS",
+  "version": "0.0.1",
+  "description": "PIS Project",
+  "main": "backend/web-server.js",
+  "scripts": {
+    "test": "./node_modules/.bin/grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karelklima/PIS.git"
+  },
+  "keywords": [
+    "pis"
+  ],
+  "author": "PIS Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karelklima/PIS/issues"
+  },
+  "homepage": "https://github.com/karelklima/PIS",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.0.0",
+    "express-winston": "^0.2.5",
+    "glob": "^3.2.9",
+    "grunt": "^0.4.4",
+    "grunt-cli": "^0.1.13",
+    "grunt-mocha-test": "^0.10.2",
+    "jsonld": "^0.2.6",
+    "parseurl": "^1.0.1",
+    "send": "^0.2.0",
+    "should": "^3.3.0",
+    "underscore": "^1.6.0",
+    "winston": "^0.7.3"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  }
+}

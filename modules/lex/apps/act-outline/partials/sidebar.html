@@ -1,0 +1,8 @@
+<div ng-controller="LexActOutlineController" sidebar-app heading="Obsah">
+    <div ng-hide="isLoading || isEmpty()">
+
+        <div class="outline" compile="actOutline"></div>
+
+    </div>
+    <div ng-show="isTextEmpty()">Obsah není dostupný.</div>
+</div>
