@@ -1,0 +1,4 @@
+{
+    "title": "Drugs",
+    "dependencies": ["core", "search"]
+}

@@ -1,9 +1,9 @@
 {
-    "title" : "Justinian",
-    "favicon" : "modules/justinian/assets/img/justinian.ico",
-    "home" : {"module" : "justinian", "application" : "home"},
+    "title" : "Léková Encyklopedie",
+    "favicon" : "modules/core/assets/img/favicon.ico",
+    "home" : {"module" : "drugs", "application" : "home"},
     "page-not-found" : {"module" : "core", "application" : "page-not-found"},
-    "modules" : ["core", "search", "lex", "court", "coi", "justinian"],
+    "modules" : ["core", "search", "drugs"],
     "asset-extensions" : ["html", "js", "css", "png"],
     "sparql" : {
         "datastore-url" : "http://linked.opendata.cz/sparql",

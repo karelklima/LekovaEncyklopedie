@@ -1,4 +1,0 @@
-{
-    "title" : "Justinian",
-    "dependencies": ["core", "lex", "court", "coi"]
-}

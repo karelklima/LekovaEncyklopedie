@@ -1,9 +1,0 @@
-{
-    "title" : "Zákoný",
-    "datatypes" : ["lex:Decision"],
-    "views": ["sidebar"],
-    "dependencies": {
-        "court": ["decision-detail"]
-    },
-    "priority" : -1
-}
