@@ -238,6 +238,8 @@ SparqlRouteJSONLD.prototype.handleResponse = function(responseString, res) {
 
     var self = this;
 
+    console.log(responseString);
+
     Q.fcall(function() { return responseString; })
         .then(function(r) { return JSON.parse(responseString); })
         .then(function(r) { return self.applyContext(r); })

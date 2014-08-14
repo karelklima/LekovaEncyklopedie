@@ -1,0 +1,16 @@
+<div sidebar-app heading="Medicinal products" ng-controller="DrugsMedicinalProductsController">
+    <table>
+        <tr>
+            <th>Název</th>
+            <th>Vel. balení</th>
+        </tr>
+        <tr ng-repeat="product in products">
+            <td>
+                <a click resource="{{product['@id']}}" type="sukl:MedicinalProduct">
+                    {{product.title}}
+                </a>
+            </td>
+            <td>{{product.hasPackagingSize}}</td>
+        </tr>
+    </table>
+</div>

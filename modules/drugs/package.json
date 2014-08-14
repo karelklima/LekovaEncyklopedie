@@ -4,11 +4,14 @@
     "prefixes": {
         "skos:" : "http://www.w3.org/2004/02/skos/core#",
         "ndfrt:" : "http://linked.opendata.cz/ontology/ndfrt/",
-        "atc:" : "http://linked.opendata.cz/resource/ATC/"
+        "atc:" : "http://linked.opendata.cz/resource/ATC/",
+        "sukl:" : "http://linked.opendata.cz/ontology/sukl/"
     },
     "apis": {
         "ingredient-detail": { "resource": "", "test": "test" },
-        "active-ingredients": {"resource": ""}
+        "active-ingredients": {"resource": ""},
+        "medicinal-products": {"resource": ""},
+        "medicinal-product-detail": {"resource": ""}
     },
     "universal-search": [
         {

@@ -1,0 +1,5 @@
+{
+    "title": "Detail produktu",
+    "views": ["main"],
+    "datatypes": ["sukl:MedicinalProduct"]
+}

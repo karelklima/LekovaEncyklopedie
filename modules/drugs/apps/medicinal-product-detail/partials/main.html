@@ -1,0 +1,34 @@
+<div main-app ng-controller="DrugsMedicinalProductController">
+<div app-bar>
+    <div class="navbar-brand">
+        Produkt {{product.title}}
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>Vlastnost</th>
+        <th>Hodnota</th>
+    </tr>
+    <tr>
+        <td>Název</td>
+        <td>{{product.title}}</td>
+    </tr>
+    <tr>
+        <td>Síla</td>
+        <td>{{product.hasStrength}}</td>
+    </tr>
+    <tr>
+        <td>Aktivní ingredience</td>
+        <td>
+            <ul>
+                <li ng-repeat="ai in product.hasActiveIngredient_tree">
+                    <a click resource="{{ai['@id']}}" type="ndfrt:Ingredient">
+                        {{ai.prefLabel | join}}
+                    </a>
+                </li>
+            </ul>
+
+        </td>
+    </tr>
+</table>
+</div>

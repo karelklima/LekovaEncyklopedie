@@ -1,0 +1,23 @@
+PREFIX ndfrt: <http://linked.opendata.cz/ontology/ndfrt/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sukl: <http://linked.opendata.cz/ontology/sukl/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+CONSTRUCT {
+ ?mp dcterms:title ?mpTitle ;
+  sukl:hasPackagingSize ?mpPackagingSize .
+}
+WHERE {
+
+<{{"param":"resource"}}> skos:prefLabel ?ndfrtLabel .
+
+?sukli a sukl:ActiveIngredient ;
+  skos:prefLabel ?suklLabel .
+
+FILTER (LCASE(?ndfrtLabel) = LCASE(?suklLabel))
+
+?mp sukl:hasActiveIngredient ?sukli ;
+  dcterms:title ?mpTitle ;
+  sukl:hasPackagingSize ?mpPackagingSize .
+
+}
