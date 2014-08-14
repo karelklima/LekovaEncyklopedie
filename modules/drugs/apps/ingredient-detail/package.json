@@ -1,0 +1,5 @@
+{
+    "title": "Detail ingredience",
+    "views": ["main"],
+    "datatypes": ["ndfrt:Ingredient"]
+}

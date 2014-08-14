@@ -1,0 +1,30 @@
+PREFIX ndfrt: <http://linked.opendata.cz/ontology/ndfrt/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+PREFIX resource: <{{"param": "resource"}}>
+
+CONSTRUCT {
+ resource:
+   skos:prefLabel ?label ;
+   ndfrt:may_treat ?mt ;
+   ndfrt:CI_with ?ciw .
+
+ ?mt skos:prefLabel ?mtLabel .
+
+ ?ciw skos:prefLabel ?ciwLabel .
+
+}
+FROM <http://linked.opendata.cz/resource/dataset/ndf-rt>
+WHERE {
+ resource: skos:prefLabel ?label .
+
+ ?di a ndfrt:DrugIngredient ;
+   ndfrt:has_Ingredient resource: ;
+   ndfrt:may_treat ?mt ;
+   ndfrt:CI_with ?ciw .
+
+ ?mt skos:prefLabel ?mtLabel .
+
+ ?ciw skos:prefLabel ?ciwLabel .
+
+}

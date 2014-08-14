@@ -1,0 +1,15 @@
+<div ng-controller="DrugsIngredientController" main-app>
+    <h1>Název: {{ingredient.prefLabel}}</h1>
+    <h2>CI</h2>
+    <ul>
+        <li ng-repeat="ci in ingredient.CI_with_tree">
+            {{ci.prefLabel | join}}
+        </li>
+    </ul>
+    <h2>May treat</h2>
+    <ul>
+        <li ng-repeat="mt in ingredient.may_treat_tree">
+            {{mt.prefLabel | join}}
+        </li>
+    </ul>
+</div>

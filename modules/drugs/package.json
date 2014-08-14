@@ -6,10 +6,13 @@
         "ndfrt:" : "http://linked.opendata.cz/ontology/ndfrt/",
         "atc:" : "http://linked.opendata.cz/resource/ATC/"
     },
+    "apis": {
+        "ingredient-detail": { "resource": "", "test": "test" }
+    },
     "universal-search": [
         {
             "datasets": ["http://linked.opendata.cz/resource/dataset/ndf-rt"],
-            "type" : "ndfrt:DrugIngredient",
+            "type" : "ndfrt:Ingredient",
             "property" : "skos:prefLabel",
             "label" : "Drug ingredient"
         },

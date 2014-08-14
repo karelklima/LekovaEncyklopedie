@@ -57,6 +57,8 @@ function ApiRoutingTable()
                 this.routingTable[moduleName + '/' + apiName] = route;
             }
             else {
+                console.log(route);
+                console.log(route instanceof ApiRoute);
                 throw new Error("Invalid API provider: " + moduleName + '/' + apiName);
             }
         }
