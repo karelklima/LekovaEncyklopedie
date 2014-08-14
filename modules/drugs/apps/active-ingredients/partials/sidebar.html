@@ -1,0 +1,9 @@
+<div ng-controller="DrugsActiveIngredientsController" sidebar-app heading="Active ingredients">
+    <ul>
+        <li ng-repeat="ingredient in ingredients">
+            <a click resource="{{ingredient['@id']}}" type="ndfrt:Ingredient">
+                {{ingredient.prefLabel}}
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,20 @@
+PREFIX ndfrt: <http://linked.opendata.cz/ontology/ndfrt/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+ ?result skos:prefLabel ?resultLabel .
+}
+WHERE {
+
+?di a ndfrt:DrugIngredient ;
+  ndfrt:has_Ingredient <{{"param": "resource"}}> .
+
+?interaction ndfrt:ingredient ?di ;
+  ndfrt:ingredient ?idi .
+
+FILTER (?di != ?idi)
+
+?idi ndfrt:has_Ingredient ?result .
+?result skos:prefLabel ?resultLabel .
+
+}
