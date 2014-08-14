@@ -1,9 +1,15 @@
-<div ng-controller="DrugsActiveIngredientsController" sidebar-app heading="Active ingredients">
+<div ng-controller="DrugsActiveIngredientsController" sidebar-app heading="Interakce s účinnými látkami">
     <ul>
-        <li ng-repeat="ingredient in ingredients">
+        <li ng-repeat="ingredient in ingredients | limitTo:limit">
             <a click resource="{{ingredient['@id']}}" type="ndfrt:Ingredient">
                 {{ingredient.prefLabel}}
             </a>
         </li>
     </ul>
+    <div class="text-center">
+        <a ng-show="ingredients.length > 10" ng-click="toggleLimit()" class="btn btn-primary btn-sm">
+            <span ng-show="limit == 10">Zobrazit vše</span>
+            <span ng-show="limit != 10">Skrýt</span>
+        </a>
+    </div>
 </div>

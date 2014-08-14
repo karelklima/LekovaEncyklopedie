@@ -1,35 +1,62 @@
 <div main-app ng-controller="DrugsMedicinalProductController">
-<div app-bar>
-    <div class="navbar-brand">
-        Produkt {{product.title}}
+    <div app-bar>
+        <div class="navbar-brand">
+            Léčivý přípravek {{product.title}}
+        </div>
     </div>
-</div>
-    
-<table class="table">
-    <tr>
-        <th>Vlastnost</th>
-        <th>Hodnota</th>
-    </tr>
-    <tr>
-        <td>Název</td>
-        <td>{{product.title}}</td>
-    </tr>
-    <tr>
-        <td>Síla</td>
-        <td>{{product.hasStrength}}</td>
-    </tr>
-    <tr>
-        <td>Aktivní ingredience</td>
-        <td>
-            <ul>
-                <li ng-repeat="ai in product.hasActiveIngredient_tree">
-                    <a click resource="{{ai['@id']}}" type="ndfrt:Ingredient">
-                        {{ai.prefLabel | join}}
-                    </a>
-                </li>
-            </ul>
 
-        </td>
-    </tr>
-</table>
+    <div spinner-bar ng-show="isLoading"></div>
+
+    <div class="well" ng-hide="isLoading">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <p><strong>Název</strong></p>
+            </div>
+            <div class="col-sm-8">
+                <p>{{product.title}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <p><strong>Síla</strong></p>
+            </div>
+            <div class="col-sm-8">
+                <p>{{product.hasStrength}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <p><strong>Velikost balení</strong></p>
+            </div>
+            <div class="col-sm-8">
+                <p>{{product.hasPackagingSize}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <p><strong>Způsob podání</strong></p>
+            </div>
+            <div class="col-sm-8">
+                <p>{{product.hasRouteOfAdministration}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <p><strong>Účinné látky</strong></p>
+            </div>
+            <div class="col-sm-8">
+                <ul>
+                    <li ng-repeat="ai in product.hasActiveIngredient_tree">
+                        <a click resource="{{ai['@id']}}" type="ndfrt:Ingredient">
+                            {{ai.prefLabel | join}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
 </div>

@@ -18,7 +18,7 @@
             "datasets": ["http://linked.opendata.cz/resource/dataset/ndf-rt"],
             "type" : "ndfrt:Ingredient",
             "property" : "skos:prefLabel",
-            "label" : "Drug ingredient"
+            "label" : "Účinná látka"
         },
         {
             "datasets": ["http://linked.opendata.cz/resource/dataset/ATC"],

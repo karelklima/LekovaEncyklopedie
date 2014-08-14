@@ -4,7 +4,11 @@
 
         .controller("DrugsActiveIngredientsController", ['$scope', 'AppService', function($scope, AppService) {
 
-            $scope.ingredients;
+            $scope.limit = 10;
+
+            $scope.toggleLimit = function() {
+                $scope.limit = $scope.limit == 10 ? 1000 : 10;
+            };
 
             this.update = function() {
 

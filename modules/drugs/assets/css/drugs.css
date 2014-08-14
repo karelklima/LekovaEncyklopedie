@@ -1,3 +1,6 @@
 .app-bar a {
     color: #FFF !important;
 }
+.table-detail th {
+    max-width: 100px;
+}
