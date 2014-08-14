@@ -1,4 +1,23 @@
 {
     "title": "Drugs",
-    "dependencies": ["core", "search"]
+    "dependencies": ["core", "search"],
+    "prefixes": {
+        "skos:" : "http://www.w3.org/2004/02/skos/core#",
+        "ndfrt:" : "http://linked.opendata.cz/ontology/ndfrt/",
+        "atc:" : "http://linked.opendata.cz/resource/ATC/"
+    },
+    "universal-search": [
+        {
+            "datasets": ["http://linked.opendata.cz/resource/dataset/ndf-rt"],
+            "type" : "ndfrt:DrugIngredient",
+            "property" : "skos:prefLabel",
+            "label" : "Drug ingredient"
+        },
+        {
+            "datasets": ["http://linked.opendata.cz/resource/dataset/ATC"],
+            "type": "atc:ATCConcept",
+            "property": "skos:prefLabel",
+            "label": "ATC skupina"
+        }
+    ]
 }
